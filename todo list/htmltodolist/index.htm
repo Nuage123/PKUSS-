@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="icon" href="https://www.emojiall.com/en/header-svg/%E2%9C%85.svg">
+    <link rel="stylesheet" href="style.css">
+    <!-- <script type="javascript" src="/taskdealer.js"></script> -->
+</head>
+<body>
+    <script>
+//     window.onbeforeunload=function (){
+//     alert("===onbeforeunload===");
+//    	var restore=confirm("你想保存本次的数据吗？");
+  
+// }
+window.onload=function(){
+    var firstTask=prompt("欢迎来到todo-list,今天想要做什么呢？先来添加第一个任务吧。");
+    if(!firstTask=="")
+        add(firstTask);
+}
+
+var needToConfirm = true; 
+window.onbeforeunload = confirmExit; 
+function confirmExit() {
+    // alert("warning");
+  if (needToConfirm) 
+    // alert("warning");
+    return "Message";
+}; 
+
+    </script>
+
+    <div class="top-container">
+            <!-- title -->
+        <h1>Todo List✔</h1>
+
+        <!-- add new task -->
+        <input id="input-box" type="text" value="">
+        <button class="btn" onclick="addTask()">add a new task</button>
+
+        
+    </div>
+
+
+    
+    <div class="middle-container">
+        <!-- task list -->
+    <div class="task-list">
+        <div class="task-row">
+                <input class="checkbox" type="checkbox">
+                <label class="task-content" for="">finish a todo list</label>
+                <img class="trash-bin" src="https://cdn-icons-png.flaticon.com/512/484/484662.png" alt="delete" onclick="deleteTask(this)">
+            </div>
+        </div>
+        
+        <!-- <img class="trash-bin-open"  src="https://cdn-icons-png.flaticon.com/512/3976/3976956.png" alt="trash-bin">     -->
+    </div>
+    <script>
+        function addTask(){
+            var newtask=document.getElementById("input-box").value;
+            if(newtask=="") {
+            alert("请先输入新任务");
+            return ;}
+            add(newtask);
+        }
+        function add(newtask){
+           
+            // 注意加上表类的.
+        var taskList=document.querySelector(".task-list");
+        var taskrow=document.createElement("div");
+        taskrow.classList.add("task-row")
+        var checkbox=document.createElement("input");
+        checkbox.type="checkbox";
+        checkbox.classList.add("checkbox")
+        var content=document.createElement("label");
+        var trashBin=document.createElement("img");
+        trashBin.onclick=function(){deleteTask(this)};
+        trashBin.src="https://cdn-icons-png.flaticon.com/512/484/484662.png";
+        trashBin.alt="delete"
+        trashBin.classList.add("trash-bin");
+        content.classList.add("task-content");
+        content.textContent=newtask;
+        taskrow.appendChild(checkbox);
+        taskrow.appendChild(content);
+        taskrow.appendChild(trashBin);
+        // if(taskrow==null) alert("1");
+        taskList.appendChild(taskrow);
+        
+    }
+
+    </script>
+
+    <script>
+        function deleteTask(elem){
+            // alert("确认删除吗");
+            var isDelete=confirm("确认删除该任务吗？")
+            if(!isDelete) return ;
+            var taskList=document.querySelector(".task-list");
+            var parent=elem.parentNode;
+            // alert(parent)
+            taskList.removeChild(parent);
+        }
+    </script>
+    
+    <div class="bottom-container">
+
+        <a href="mailto:745402527@qq.com">联系我们</a>
+        <p class="copyright">@Li Xiaowen</p>
+        
+    </div>
+
+  
+</body>
+
+</html>

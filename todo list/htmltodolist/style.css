@@ -1,0 +1,140 @@
+body{
+    /* cursor:hand; */
+    /* background-color: antiquewhite; */
+    background-image: url("background(1).png");
+    background-size: cover;
+    text-align: center;
+}
+
+/* top-container */
+h1{
+  
+    color:rgba(43, 164, 158, 0.925);
+    margin-bottom: 10px;
+}
+.btn {
+    background: #34d99a;
+    background-image: -webkit-linear-gradient(top, #34d99a, #2980b9);
+    background-image: -moz-linear-gradient(top, #34d99a, #2980b9);
+    background-image: -ms-linear-gradient(top, #34d99a, #2980b9);
+    background-image: -o-linear-gradient(top, #34d99a, #2980b9);
+    background-image: linear-gradient(to bottom, #34d99a, #2980b9);
+    -webkit-border-radius: 30;
+    -moz-border-radius: 30;
+    border-radius: 30px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 15px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn:hover {
+    cursor:pointer;
+    background: #3cb0fd;
+    background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+    background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+    text-decoration: none;
+  }
+
+#input-box:hover{
+    cursor:url("typemachine(1).png"),auto;
+}
+
+/* middle-container */
+.task-row{
+    text-decoration: underline;
+    margin-left:630px;
+    text-align: left;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.task-row:first-child{
+    /* margin-left: 650px; */
+    margin-top: 50px;
+}
+.checkbox{
+    position: relative;
+  
+}
+
+
+
+.checkbox:hover{
+    cursor:url(pencil.png),auto;
+}
+.input-box:hover{
+    cursor:url(pencil.png),auto;
+}
+.checkbox:hover+.task-content{
+    
+    text-decoration:line-through;
+    text-decoration-style: double;
+   
+   
+}
+
+
+
+/* 伪类改变兄弟元素样式 */
+/* check时会给后面的内容画删除线 */
+.checkbox:checked+.task-content{
+    text-decoration:line-through;
+    text-decoration-color: red;
+    text-decoration-style: double;
+   
+}
+
+.input-box{
+    height: 40px;
+    width: 400px;
+}
+.trash-bin{
+    margin-left: 20px;
+    height:30px;
+     /* position: absolute;
+    bottom: 100px;
+    left: auto;
+    right: auto; */
+    /* *left: auto; */ 
+  
+}
+
+.trash-bin:hover{
+    content: url("https://cdn-icons-png.flaticon.com/512/3976/3976961.png");
+}
+
+
+/* .trash-bin-closed:hover{
+    src: url("https://cdn-icons-png.flaticon.com/512/3976/3976956.png") auto;
+    background-color: yellow;
+} */
+
+/* bottom-container */
+.bottom-container{
+    position: absolute;
+    left:0px;
+    bottom:0px;
+    width: 100%;
+    padding-top: 10px;
+    margin: 0;
+    background-color:grey;
+    color:gainsboro;
+}
+.bottom-container a{
+    position: relative;
+
+    border-radius: 30%;
+    text-decoration: none;
+    color:whitesmoke;
+}
+.bottom-container a:hover{
+   background-color: #96c1de;
+}
+
+
+
+
